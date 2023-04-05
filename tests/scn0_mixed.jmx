@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="PROTOCOL" elementType="Argument">
+            <stringProp name="Argument.name">PROTOCOL</stringProp>
+            <stringProp name="Argument.value">${__P(PROTOCOL, https)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ENV_URL" elementType="Argument">
+            <stringProp name="Argument.name">ENV_URL</stringProp>
+            <stringProp name="Argument.value">${__P(ENV_URL, example.com)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ENV_URL_QA" elementType="Argument">
+            <stringProp name="Argument.name">ENV_URL_QA</stringProp>
+            <stringProp name="Argument.value">${__P(ENV_URL_QA, example_qa.com)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ENV_URL_TMP" elementType="Argument">
+            <stringProp name="Argument.name">ENV_URL_TMP</stringProp>
+            <stringProp name="Argument.value">Valentyn/</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PORT" elementType="Argument">
+            <stringProp name="Argument.name">PORT</stringProp>
+            <stringProp name="Argument.value">${__P(PORT, 443)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="VUSERS" elementType="Argument">
+            <stringProp name="Argument.name">VUSERS</stringProp>
+            <stringProp name="Argument.value">${__P(VUSERS, 1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RAMP_UP" elementType="Argument">
+            <stringProp name="Argument.name">RAMP_UP</stringProp>
+            <stringProp name="Argument.value">${__P(RAMP_UP, 10)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DURATION" elementType="Argument">
+            <stringProp name="Argument.name">DURATION</stringProp>
+            <stringProp name="Argument.value">${__P(DURATION, 3600)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="THINK_TIME_DEVIATION" elementType="Argument">
+            <stringProp name="Argument.name">THINK_TIME_DEVIATION</stringProp>
+            <stringProp name="Argument.value">${__P(THINK_TIME_DEVIATION, 13123)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="THINK_TIME" elementType="Argument">
+            <stringProp name="Argument.name">THINK_TIME</stringProp>
+            <stringProp name="Argument.value">${__P(THINK_TIME, 25714)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AUTH_USERNAME" elementType="Argument">
+            <stringProp name="Argument.name">AUTH_USERNAME</stringProp>
+            <stringProp name="Argument.value">${__P(AUTH_USERNAME,login)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AUTH_PASSWORD" elementType="Argument">
+            <stringProp name="Argument.name">AUTH_PASSWORD</stringProp>
+            <stringProp name="Argument.value">${__P(AUTH_PASSWORD,password)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="probabilities" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="pProbability1" elementType="Argument">
+            <stringProp name="Argument.name">pProbability1</stringProp>
+            <stringProp name="Argument.value">${__P(pScn_01, 67)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbability2" elementType="Argument">
+            <stringProp name="Argument.name">pProbability2</stringProp>
+            <stringProp name="Argument.value">${__P(pScn_02, 14)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbability3" elementType="Argument">
+            <stringProp name="Argument.name">pProbability3</stringProp>
+            <stringProp name="Argument.value">${__P(pScn_03, 9)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbability4" elementType="Argument">
+            <stringProp name="Argument.name">pProbability4</stringProp>
+            <stringProp name="Argument.value">${__P(pScn_04, 3)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbability5" elementType="Argument">
+            <stringProp name="Argument.name">pProbability5</stringProp>
+            <stringProp name="Argument.value">${__P(pScn_05, 5)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbability6" elementType="Argument">
+            <stringProp name="Argument.name">pProbability6</stringProp>
+            <stringProp name="Argument.value">${__P(pScn_06, 2)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="scn01_Probabilities" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="pProbabilityFindDoctorsDrugsPage" elementType="Argument">
+            <stringProp name="Argument.name">pProbabilityFindDoctorsDrugsPage</stringProp>
+            <stringProp name="Argument.value">48</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbabilitypOutliersPage" elementType="Argument">
+            <stringProp name="Argument.name">pProbabilitypOutliersPage</stringProp>
+            <stringProp name="Argument.value">14</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbabilitypPlansPage" elementType="Argument">
+            <stringProp name="Argument.name">pProbabilitypPlansPage</stringProp>
+            <stringProp name="Argument.value">38</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbabilityOutliersTransactionsPage" elementType="Argument">
+            <stringProp name="Argument.name">pProbabilityOutliersTransactionsPage</stringProp>
+            <stringProp name="Argument.value">50</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="scn02_Probabilities" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="pProbabilityIndividualPage" elementType="Argument">
+            <stringProp name="Argument.name">pProbabilityIndividualPage</stringProp>
+            <stringProp name="Argument.value">34</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pProbabilityValueAddedPage" elementType="Argument">
+            <stringProp name="Argument.name">pProbabilityValueAddedPage</stringProp>
+            <stringProp name="Argument.value">32</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="scn03_Probabilities" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="pProbabilityMedicalPage" elementType="Argument">
+            <stringProp name="Argument.name">pProbabilityMedicalPage</stringProp>
+            <stringProp name="Argument.value">50</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">${ENV_URL}</stringProp>
+        <stringProp name="HTTPSampler.port">${PORT}</stringProp>
+        <stringProp name="HTTPSampler.protocol">${PROTOCOL}</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.embedded_url_re">^((?!jquery.min.js|StyleResourceHandler.axd).)*$</stringProp>
+        <stringProp name="HTTPSampler.implementation">Java</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">true</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list">
+          <elementProp name="" elementType="Authorization">
+            <stringProp name="Authorization.url">https://${ENV_URL}</stringProp>
+            <stringProp name="Authorization.username">${AUTH_USERNAME}</stringProp>
+            <stringProp name="Authorization.password">${AUTH_PASSWORD}</stringProp>
+            <stringProp name="Authorization.domain"></stringProp>
+            <stringProp name="Authorization.realm"></stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Authorization">
+            <stringProp name="Authorization.url">https://${ENV_URL_QA}</stringProp>
+            <stringProp name="Authorization.username">${AUTH_USERNAME}</stringProp>
+            <stringProp name="Authorization.password">${AUTH_PASSWORD}</stringProp>
+            <stringProp name="Authorization.domain"></stringProp>
+            <stringProp name="Authorization.realm"></stringProp>
+          </elementProp>
+        </collectionProp>
+        <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+        <boolProp name="AuthManager.clearEachIteration">true</boolProp>
+      </AuthManager>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${VUSERS}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${RAMP_UP}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${DURATION}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Calculate_Probabilities" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.lang.Math
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+class Distribution {
+
+	Map&lt;String, int[]&gt; intervals;
+	
+	Distribution (Map&lt;String, Integer&gt; probs) {
+		int sum = 0;
+		for(Map.Entry&lt;String, Integer&gt; entry : probs.entrySet()) {
+			sum += entry.getValue();
+		}
+		if(sum != 100) {
+			Logger logger = LoggerFactory.getLogger(Distribution.class);
+			logger.info(&quot;Wrong probability set up!!!&quot;);
+		}
+		
+		this.intervals = new HashMap&lt;String, int[]&gt;();
+		int lower_bound = 0;
+		for (Map.Entry&lt;String, Integer&gt; entry : probs.entrySet()) {
+			this.intervals.put(entry.getKey(), [ lower_bound, lower_bound + entry.getValue() ]);
+			lower_bound += entry.getValue();
+		}
+	}
+	
+	String getRandomKey() {
+		int random = (int)(Math.random() * 100)
+		for(Map.Entry&lt;String, Integer&gt; entry : this.intervals.entrySet()) {
+			String key = entry.getKey();
+			int[] entryBounds = this.intervals[key]
+			if (entryBounds[0] &lt;= random &amp;&amp; entryBounds[1] &gt; random) {
+				return key;
+			}
+		}
+	}
+}
+
+
+Map&lt;String, Integer&gt; probs = new HashMap&lt;String, Integer&gt;()
+probs.put(&quot;scn01&quot;, vars.get(&quot;pProbability1&quot;).toInteger())
+probs.put(&quot;scn02&quot;, vars.get(&quot;pProbability2&quot;).toInteger())
+probs.put(&quot;scn03&quot;, vars.get(&quot;pProbability3&quot;).toInteger())
+probs.put(&quot;scn04&quot;, vars.get(&quot;pProbability4&quot;).toInteger())
+probs.put(&quot;scn05&quot;, vars.get(&quot;pProbability5&quot;).toInteger())
+probs.put(&quot;scn06&quot;, vars.get(&quot;pProbability6&quot;).toInteger())
+
+Distribution distr = new Distribution(probs)
+
+String scenario = distr.getRandomKey();
+vars.put(&quot;xVar_scenarioNumber&quot;, scenario)
+
+
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+        </hashTree>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch Controller" enabled="true">
+          <stringProp name="SwitchController.value">${xVar_scenarioNumber}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="scn01" enabled="true">
+            <stringProp name="IncludeController.includepath">scn01.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="scn02" enabled="true">
+            <stringProp name="IncludeController.includepath">scn02.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="scn03" enabled="true">
+            <stringProp name="IncludeController.includepath">scn03.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="scn04" enabled="true">
+            <stringProp name="IncludeController.includepath">scn04.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="scn05" enabled="true">
+            <stringProp name="IncludeController.includepath">scn05.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="scn06" enabled="true">
+            <stringProp name="IncludeController.includepath">scn06.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Clean variables" enabled="true"/>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">0</stringProp>
+          </TestAction>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 Clean Session" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">/* remove all vars that starts with xVar_ */
+
+def entries = new HashSet(vars.entrySet());
+
+for(Map.Entry&lt;String,Object&gt; entry : entries) {
+	if(entry.getKey().startsWith(&quot;xVar_&quot;)) {
+		vars.remove(entry.getKey());
+	}
+}</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

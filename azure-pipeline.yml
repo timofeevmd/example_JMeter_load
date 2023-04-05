@@ -1,0 +1,54 @@
+trigger:
+  - develop
+
+variables:
+  JVM_ARGS: '-Xms4g -Xmx4g'
+  JUNIT: 'True'
+#  TEST: ''
+#  RAMP_UP: '1'
+#  DURATION: '300'
+#  VUSERS: '0'
+#  ENV_URL: ''
+
+schedules:
+ - cron: "0 23 * * 0-4"
+   displayName: Daily build
+   branches:
+     include:
+       - develop
+   always: true
+
+parameters:
+  - name: generateReport
+    default: true
+    type: boolean
+
+stages:
+  - stage: Server_Side
+    pool:
+      name:  Perf
+    #dependsOn: [] only with enabled subscription
+    displayName: PerfTest_Server_Side
+    jobs:
+      - job: Backend_PerfTest
+        timeoutInMinutes: 90 # how long to run the job before automatically cancelling
+        displayName: Backend
+        steps:
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: |
+                mkdir reports
+                docker run --rm -u=root -v $(Build.SourcesDirectory)/reports:/tmp/reports  -v $(Build.SourcesDirectory)/tests:/mnt/jmeter/ -e JVM_ARGS='${{ variables.JVM_ARGS }}' -e junit_report="{{ variables.JUNIT }}" getcarrier/perfmeter:latest -n -t /mnt/jmeter/$(TEST).jmx -JVUSERS=$(VUSERS) -JRAMP_UP=$(RAMP_UP) -JTHINK_TIME=$(THINK_TIME) -JTHINK_TIME_DEVIATION=$(THINK_TIME_DEVIATION) -JDURATION=$(DURATION) -JENVIRONMENT=$(ENV_URL) -Jjmeter.reportgenerator.overall_granularity=10000
+                ls -la reports
+                sudo chmod -R 777 $(Build.SourcesDirectory)
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: 'JUnit' # Options: JUnit, NUnit, VSTest, xUnit, cTest
+              testResultsFiles: 'reports/jmeter.xml'
+          - task: PublishPipelineArtifact@1
+            displayName: Publish JMeter Report
+            condition: and(always(), eq('${{ parameters.generateReport }}', 'true'))
+            inputs:
+              targetPath: reports
+              artifact: jmeter
